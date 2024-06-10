@@ -2,6 +2,8 @@
 // Server Only
 const name = 'Fernando Alberto Herrera Jiménez';
 const title = 'Home Page';
+
+const currentDate = new Date();
 ---
 
 <html lang="en">
@@ -13,18 +15,30 @@ const title = 'Home Page';
     <title>{title}</title>
   </head>
   <body>
+    <nav>
+      <a href="/">Home Page</a>
+      <a href="/about">About Page</a>
+      <a href="/contact">Contact Page</a>
+    </nav>
+
     <h1>{name}</h1>
 
-    <p>Momento actual: {new Date().toLocaleTimeString()}</p>
+    <p>Momento actual: {currentDate.toLocaleTimeString()}</p>
     <p id="current-time">Momento actual real:</p>
 
     <footer>Año: 2023</footer>
 
     <script>
+      // Client Only
+      const footer = document.querySelector('footer') as HTMLElement;
+      const currentTimeParagraph = document.querySelector(
+        '#current-time'
+      ) as HTMLParagraphElement;
+
       const currentYear: number = new Date().getFullYear();
 
-      const footer = document.querySelector('footer') as HTMLElement;
       footer.innerText = `Año: ${currentYear}`;
+      currentTimeParagraph.innerText = `Momento actual real: ${new Date().toLocaleTimeString()}`;
     </script>
   </body>
 </html>
