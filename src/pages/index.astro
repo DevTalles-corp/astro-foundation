@@ -1,4 +1,6 @@
 ---
+import Navbar from '../components/Navbar.astro';
+
 // Server Only
 const name = 'Fernando Alberto Herrera Jiménez';
 const title = 'Home Page';
@@ -15,11 +17,7 @@ const currentDate = new Date();
     <title>{title}</title>
   </head>
   <body>
-    <nav>
-      <a href="/">Home Page</a>
-      <a href="/about">About Page</a>
-      <a href="/contact">Contact Page</a>
-    </nav>
+    <Navbar />
 
     <h1>{name}</h1>
 
