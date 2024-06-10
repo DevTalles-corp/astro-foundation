@@ -1,5 +1,7 @@
 ---
-
+// Server Only
+const name = 'Fernando Alberto Herrera Jiménez';
+const title = 'Home Page';
 ---
 
 <html lang="en">
@@ -8,9 +10,21 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Hola Mundo</title>
+    <title>{title}</title>
   </head>
   <body>
-    <h1>Fernando Herrera</h1>
+    <h1>{name}</h1>
+
+    <p>Momento actual: {new Date().toLocaleTimeString()}</p>
+    <p id="current-time">Momento actual real:</p>
+
+    <footer>Año: 2023</footer>
+
+    <script>
+      const currentYear: number = new Date().getFullYear();
+
+      const footer = document.querySelector('footer') as HTMLElement;
+      footer.innerText = `Año: ${currentYear}`;
+    </script>
   </body>
 </html>
